@@ -93,7 +93,7 @@ body {
 }
 
 #gallery {
-	min-height: 100vh;
+	/* min-height: 100vh; */
 }
 .title{
 	text-align: center;
@@ -146,13 +146,13 @@ body {
 	padding-block: 3em;
 }
 .quote__text {
-	font-family: Spectral;
+	font-family: 'Spectral';
 	font-style: italic;
 	font-weight: 300;
 
 }
 .quote__author {
-	font-family: Spectral;
+	font-family: 'Spectral';
 	font-weight: 800;
 	font-size: 22px;
 }
@@ -176,7 +176,7 @@ body {
 #services .container {
 	justify-content: space-between;
 	display: flex;
-	padding : 2em 0;
+	padding: 2em 0;
 
 }
 
@@ -355,4 +355,3 @@ input[type="submit"] {
 		width: 80%;
 	}
 }
-
