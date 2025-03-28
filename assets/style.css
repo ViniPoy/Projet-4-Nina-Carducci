@@ -94,9 +94,6 @@ header .name {
 	font-size: 14px;
 }
 
-#gallery {
-	/* min-height: 100vh; */
-}
 .title{
 	text-align: center;
 	padding-block: 2em;
@@ -262,7 +259,7 @@ input[type="submit"] {
 		margin-top: 0;
 		margin-bottom: 1em;
 	}
-	#about-me h6, #about-me p {
+	.about-me__introduction, .about-me p {
 		width: 100%;
 	}
 }
@@ -327,15 +324,15 @@ input[type="submit"] {
 }
 
 @media all and (max-width: 650px) {
-	.top-header {
+	header {
 		flex-direction: column;
 		padding-inline: 0;
 	}
-	.top-header .nav, .top-header .nav ul {
+	header .nav, header .nav ul {
 		width: 100%;
 		padding: 0 0 0 0;
 	}
-	.top-header .nav li {
+	header .nav li {
 		flex: 1;
 		padding-block: 1em;
 		text-align: center;
