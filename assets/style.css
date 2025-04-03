@@ -102,7 +102,7 @@ header .name {
 	justify-content: center;
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link, .nav-pills .active-tag {
-	color: #fff !important;
+	color: #000 !important;
 	background-color: #BEB45A;
 	border-radius:0 ;
 }
