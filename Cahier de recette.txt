@@ -1,0 +1,117 @@
+
+# Cahier de Recette
+
+## 1. Introduction
+Dans le cadre de l'amélioration des performances et de l'accessibilité du site, plusieurs optimisations ont été réalisées. Ce document détaille les modifications 
+effectuées, leur impact, ainsi que les tests de validation.
+
+---
+
+## 2. Optimisations Réalisées
+
+### **2.1. Optimisation des Images et des Scripts**
+**Problèmes identifiés :**
+- Les images étaient trop lourdes, ce qui ralentissait le chargement.
+- Les scripts se chargeaient sans optimisation, impactant le temps de rendu.
+- Le fichier CSS principal et certains fichiers JS n’étaient pas minifiés.
+
+**Solutions apportées :**
+- Conversion des images en format **AVIF** avec une compression optimisée tout en maintenant une bonne qualité.
+- Ajout de l’attribut **`defer`** aux balises `<script>` pour éviter de bloquer le rendu initial de la page.
+- Minification des fichiers **style.css** et **maugallery.js**.
+- Utilisation des versions **minifiées** de Bootstrap.
+
+**Résultats obtenus :**
+✅ **Score de performance Lighthouse avant :** 55 → **Après :** 98  
+
+---
+
+### **2.2. Optimisation du Référencement et de l'Accessibilité**
+**Problèmes identifiés :**
+- Métadonnées manquantes dans le `<head>` (title, description, etc.).
+- Absence d'attributs **alt** pour les images, rendant leur description inaccessible aux lecteurs d'écran.
+- Mauvaise structure sémantique du HTML (absence de `<header>`, `<main>`, et désordre dans les titres `<h1>`, `<h2>`, etc.).
+
+**Solutions apportées :**
+- Ajout des **balises meta** (`name`, `description`) et d’un **title** optimisé.
+- Insertion d'un **attribut alt** descriptif pour chaque image.
+- Correction de la **structure HTML** :
+  - Ajout des balises `<header>`, `<main>`.
+  - Réorganisation des titres pour respecter une hiérarchie logique.
+
+**Résultats obtenus :**
+✅ **Score d'accessibilité Lighthouse avant :** 70 → **Après :** 100  
+✅ **Score SEO Lighthouse avant :** 73 → **Après :** 100  
+
+---
+
+### **2.3. Optimisation pour les Réseaux Sociaux**
+**Problèmes identifiés :**
+- Le site ne contenait aucune méta-information pour les partages sur les réseaux sociaux.
+- Absence de balises structurées pour le référencement local.
+
+**Solutions apportées :**
+- Ajout des **métas OpenGraph et Twitter Cards** pour améliorer l'affichage du site lorsqu'il est partagé sur les réseaux sociaux.
+- Intégration d'un **script Schema.org** pour un meilleur référencement local.
+
+**Résultats obtenus :**
+✅ **Test avec résultats enrichis Google rich snippets validé**
+✅ **Test Schema.org sans erreur ni avertissement**
+
+---
+
+### **2.4. Correction des Fonctionnalités JavaScript et CSS**
+**Problèmes identifiés :**
+- La **modale** ne fonctionnait pas correctement:
+    Le **carrousel** ne s'affichait pas comme prévu (les images ne changeait pas au clique sur les flèches.).
+- Les **tags de la galerie** ne réagissaient pas en mode focus.
+
+**Solutions apportées :**
+- Corrections dans le **CSS** et le **JS** pour rétablir le fonctionnement de la modaleet déboguer le **carrousel**.
+- Ajustements CSS pour assurer un **effet focus fonctionnel** sur les tags de la galerie.
+
+---
+
+### **2.5. Accessibilité et Problèmes de Contraste**
+**Problèmes identifiés :**
+- Le rapport **WAVE** a indiqué un problème de contraste sur :
+  - Les **tags de la galerie**.
+  - Les **spans des boutons « Previous » et « Next » du slider** (blanc sur fond blanc).
+
+**Solutions apportées :**
+- Pour les **tags de la galerie** : maintien du texte noir en mode focus afin d'améliorer le contraste sans altérer le design.
+- Pour les **boutons Previous / Next du carrousel** :
+  - Suppression des **spans problématiques**.
+  - Ajout de **labels ARIA (`aria-label`)** directement sur les boutons pour maintenir l’accessibilité.
+
+---
+
+## 3. Validation et Résultats des Tests
+
+### **Tests effectués**
+1. **Audit Lighthouse** avant/après modifications.
+2. **Test Lighthouse desktop** (performance, SEO, accessibilité).
+3. **Validation des balises OpenGraph et Twitter Cards** avec l'outil de Facebook et de Twitter.
+4. **Test WAVE** pour vérifier l'accessibilité après modifications.
+
+### **Résultats finaux**
+✅ **Performance :** Score **98** (avant 55).  
+✅ **Accessibilité :** Score **100** (avant 70).  
+✅ **SEO :** Score **100** (avant 73).  
+✅ **Problèmes de contraste résolus.**  
+✅ **Carrousel et modale fonctionnels.**  
+
+---
+
+## 4. Conclusion
+Grâce aux optimisations effectuées, le site est désormais **plus rapide, plus accessible et mieux référencé**. L’expérience utilisateur a été améliorée 
+et les bonnes pratiques web ont été respectées.
+
+💡 **Recommandations pour la suite :**
+- Vérifier régulièrement l'accessibilité pour maintenir un bon niveau d'inclusivité.
+- Surveiller les performances avec Lighthouse à chaque mise à jour du site.
+
+---
+
+📌 **Cahier de recette validé.** ✅
+
